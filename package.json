@@ -5,13 +5,14 @@
 		"dev": "tsx watch src/index.ts",
 		"build": "tsc",
 		"start": "node dist/index.js",
-		"lint": "pnpm exec biome check",
-		"lint:fix": "pnpm exec biome check --write --unsafe",
+		"lint": "pnpx @biomejs/biome check",
+		"lint:fix": "pnpx @biomejs/biome check --write --unsafe",
 		"prepare": "husky"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"@prisma/engines",
+			"bcrypt",
 			"better-sqlite3",
 			"esbuild",
 			"prisma"
@@ -19,12 +20,15 @@
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.19.9",
+		"@hono/zod-validator": "^0.7.6",
 		"@prisma/adapter-better-sqlite3": "^7.4.1",
 		"@prisma/client": "^7.4.1",
+		"bcrypt": "^6.0.0",
 		"better-sqlite3": "^12.6.2",
 		"dotenv": "^17.3.1",
 		"hono": "^4.12.1",
-		"prisma": "^7.4.1"
+		"prisma": "^7.4.1",
+		"zod": "^4.3.6"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.4",
